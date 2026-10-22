@@ -27,7 +27,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Természetes, mély iOS Frosted Glass hatás finom neon fénnyel */
         .ios-glass {
             background: rgba(18, 18, 22, 0.55);
             backdrop-filter: blur(32px) saturate(160%);
@@ -52,7 +51,6 @@
             box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 68, 68, 0.12);
         }
 
-        /* Prémium üveges Referenciák gomb diszkrét neon ragyogással */
         .btn-neon-glass {
             background: linear-gradient(135deg, rgba(239, 68, 68, 0.18) 0%, rgba(185, 28, 28, 0.12) 100%);
             backdrop-filter: blur(20px);
@@ -99,29 +97,24 @@
 </head>
 <body class="bg-[#09090b] text-zinc-300 min-h-screen font-sans antialiased selection:bg-red-600 selection:text-white flex flex-col relative overflow-x-hidden">
 
-    <!-- Konténerbe zárt gördülő piros háttérfoltok: nem nyújtják túl a lap alját -->
+    <!-- Háttérfények optimális méretezéssel -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <!-- 1. Bal felül (Hero szekció) -->
-        <div class="absolute -top-16 -left-16 w-[560px] h-[560px] bg-red-600/35 rounded-full blur-[130px]"></div>
-        
-        <!-- 2. Jobb oldalon közép-fent (Projektek szekció) -->
-        <div class="absolute top-[850px] -right-24 w-[520px] h-[520px] bg-rose-600/25 rounded-full blur-[140px]"></div>
-
-        <!-- 3. Bal alul (Rólam és Kapcsolat szekció magasságában) -->
-        <div class="absolute -bottom-16 -left-16 w-[600px] h-[600px] bg-red-700/30 rounded-full blur-[140px]"></div>
+        <div class="absolute -top-16 -left-16 w-72 sm:w-[560px] h-72 sm:h-[560px] bg-red-600/35 rounded-full blur-[100px] sm:blur-[130px]"></div>
+        <div class="absolute top-[850px] -right-24 w-72 sm:w-[520px] h-72 sm:h-[520px] bg-rose-600/25 rounded-full blur-[100px] sm:blur-[140px]"></div>
+        <div class="absolute -bottom-16 -left-16 w-72 sm:w-[600px] h-72 sm:h-[600px] bg-red-700/30 rounded-full blur-[100px] sm:blur-[140px]"></div>
     </div>
 
-    <!-- Fejléc / Navigáció - Légiesebb, áttetszőbb üveghatással -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-[#09090b]/30 backdrop-blur-2xl border-b border-white/10 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="text-lg font-bold tracking-wide text-zinc-100 flex items-center gap-2.5 group cursor-pointer">
-                <div class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-red-500 shadow-inner group-hover:border-red-500/50 group-hover:bg-red-500/15 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.4)] group-hover:scale-105 transition-all duration-300">
+    <!-- Fejléc -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-[#09090b]/40 backdrop-blur-2xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <a href="#" class="text-base sm:text-lg font-bold tracking-wide text-zinc-100 flex items-center gap-2.5 group cursor-pointer">
+                <div class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-red-500 shadow-inner group-hover:border-red-500/50 group-hover:bg-red-500/15 transition-all">
                     <i data-lucide="user" class="w-4 h-4"></i>
                 </div>
                 <span class="group-hover:text-white transition-colors">Nagy Márton</span>
             </a>
 
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 sm:gap-6">
                 <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
                     <a href="#projects" id="navProjects" class="nav-link transition-colors hover:text-zinc-200">Projektek</a>
                     <a href="#about" id="navAbout" class="nav-link transition-colors hover:text-zinc-200">Rólam</a>
@@ -130,34 +123,34 @@
 
                 <div class="w-px h-5 bg-white/10 hidden md:block"></div>
 
-                <!-- Nyelvváltoztató fülek -->
-                <div class="inline-flex rounded-xl p-1 bg-white/5 border border-white/10 backdrop-blur-lg">
-                    <button id="langHu" class="px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all">HU</button>
-                    <button id="langEn" class="px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all">EN</button>
+                <!-- Nyelvválasztó -->
+                <div class="inline-flex rounded-xl p-0.5 sm:p-1 bg-white/5 border border-white/10 backdrop-blur-lg">
+                    <button id="langHu" class="px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all">HU</button>
+                    <button id="langEn" class="px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all">EN</button>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Fő tartalom -->
-    <main class="flex-grow pt-32 pb-20">
-        <div class="max-w-6xl mx-auto px-6">
+    <main class="flex-grow pt-24 sm:pt-32 pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
             
             <!-- Hero Szekció -->
-            <section class="py-12 md:py-24 flex flex-col justify-center">
+            <section class="py-8 sm:py-16 md:py-24 flex flex-col justify-center">
                 <div class="max-w-3xl">
-                    <h1 id="heroTitle" class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 mb-6 leading-tight">
+                    <h1 id="heroTitle" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 mb-4 sm:mb-6 leading-tight">
                         Üdvözlöm az oldalamon!<br>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-500 to-red-600">Nagy Márton vagyok.</span>
                     </h1>
-                    <p id="heroSub" class="text-lg text-zinc-400 mb-10 leading-relaxed font-medium">
+                    <p id="heroSub" class="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-10 leading-relaxed font-normal sm:font-medium">
                         Kereskedelem és Marketing szakos hallgató, logisztikai gyakornok és digitális hirdetéskezelő. Ezen a platformon a saját fejlesztésű, letisztult és a mindennapi folyamatokat támogató webes alkalmazásaimat gyűjtöttem össze.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" id="btnProjects" class="px-7 py-3.5 rounded-xl btn-neon-glass text-red-300 font-semibold flex items-center gap-2">
+                    <div class="flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+                        <a href="#projects" id="btnProjects" class="w-full sm:w-auto justify-center px-6 sm:px-7 py-3.5 rounded-xl btn-neon-glass text-red-300 font-semibold flex items-center gap-2">
                             <i data-lucide="layers" class="w-4 h-4"></i> Referenciák
                         </a>
-                        <a href="#contact" id="btnContact" class="px-7 py-3.5 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 text-zinc-100 font-semibold hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2">
+                        <a href="#contact" id="btnContact" class="w-full sm:w-auto justify-center px-6 sm:px-7 py-3.5 rounded-xl bg-white/5 backdrop-blur-xl border border-white/10 text-zinc-100 font-semibold hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2">
                             <i data-lucide="mail" class="w-4 h-4"></i> Kapcsolatfelvétel
                         </a>
                     </div>
@@ -165,41 +158,41 @@
             </section>
 
             <!-- Projektek Szekció -->
-            <section id="projects" class="py-20 border-t border-white/10 scroll-mt-24">
-                <div class="flex items-center gap-4 mb-12">
+            <section id="projects" class="py-14 sm:py-20 border-t border-white/10 scroll-mt-20 sm:scroll-mt-24">
+                <div class="flex items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
                     <div class="w-1.5 h-6 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.7)]"></div>
-                    <h2 id="secProjectsTitle" class="text-2xl font-bold text-zinc-100">Saját Projektek</h2>
+                    <h2 id="secProjectsTitle" class="text-xl sm:text-2xl font-bold text-zinc-100">Saját Projektek</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                     <!-- Kártya 1 -->
-                    <a href="https://nagymarton06.github.io/File-Converter-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-7 flex flex-col h-full relative overflow-hidden">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-6 group-hover:text-red-400 group-hover:border-red-500/40 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all">
+                    <a href="https://nagymarton06.github.io/File-Converter-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-5 sm:p-7 flex flex-col h-full relative overflow-hidden">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-5 sm:mb-6 group-hover:text-red-400 group-hover:border-red-500/40 transition-all">
                             <i data-lucide="file-cog" class="w-5 h-5"></i>
                         </div>
-                        <h3 id="proj1Title" class="text-lg font-bold text-zinc-100 mb-3 group-hover:text-red-400 transition-colors">Univerzális Fájlkonvertáló</h3>
+                        <h3 id="proj1Title" class="text-base sm:text-lg font-bold text-zinc-100 mb-2.5 sm:mb-3 group-hover:text-red-400 transition-colors">Univerzális Fájlkonvertáló</h3>
                         <p id="proj1Desc" class="text-sm text-zinc-400 leading-relaxed flex-grow">
                             Kép, videó, hang és adatkonverzió egyedi beállításokkal, közvetlenül a böngészőből. Biztonságos megoldás külső szerver használata nélkül.
                         </p>
                     </a>
 
                     <!-- Kártya 2 -->
-                    <a href="https://nagymarton06.github.io/Diagram-Designer-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-7 flex flex-col h-full relative overflow-hidden">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-6 group-hover:text-red-400 group-hover:border-red-500/40 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all">
+                    <a href="https://nagymarton06.github.io/Diagram-Designer-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-5 sm:p-7 flex flex-col h-full relative overflow-hidden">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-5 sm:mb-6 group-hover:text-red-400 group-hover:border-red-500/40 transition-all">
                             <i data-lucide="pie-chart" class="w-5 h-5"></i>
                         </div>
-                        <h3 id="proj2Title" class="text-lg font-bold text-zinc-100 mb-3 group-hover:text-red-400 transition-colors">Diagram Designer Pro</h3>
+                        <h3 id="proj2Title" class="text-base sm:text-lg font-bold text-zinc-100 mb-2.5 sm:mb-3 group-hover:text-red-400 transition-colors">Diagram Designer Pro</h3>
                         <p id="proj2Desc" class="text-sm text-zinc-400 leading-relaxed flex-grow">
                             Precíziós vizualizációs eszköz adatelemzéshez. Egyedi felbontású, testreszabható diagramok készítése és exportálása professzionális környezetben.
                         </p>
                     </a>
 
                     <!-- Kártya 3 -->
-                    <a href="https://nagymarton06.github.io/Compound-Interest-Calculator-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-7 flex flex-col h-full relative overflow-hidden">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-6 group-hover:text-red-400 group-hover:border-red-500/40 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all">
+                    <a href="https://nagymarton06.github.io/Compound-Interest-Calculator-Pro/" target="_blank" class="group ios-glass-card rounded-2xl p-5 sm:p-7 flex flex-col h-full relative overflow-hidden">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 mb-5 sm:mb-6 group-hover:text-red-400 group-hover:border-red-500/40 transition-all">
                             <i data-lucide="landmark" class="w-5 h-5"></i>
                         </div>
-                        <h3 id="proj3Title" class="text-lg font-bold text-zinc-100 mb-3 group-hover:text-red-400 transition-colors">Vagyontervező Kalkulátor</h3>
+                        <h3 id="proj3Title" class="text-base sm:text-lg font-bold text-zinc-100 mb-2.5 sm:mb-3 group-hover:text-red-400 transition-colors">Vagyontervező Kalkulátor</h3>
                         <p id="proj3Desc" class="text-sm text-zinc-400 leading-relaxed flex-grow">
                             Kamatos kamat és történelmi inflációval korrigált vásárlóerő kalkulátor. A beépített pénzügyi asszisztens azonnal kiértékeli a beállított stratégiádat és a nyugdíjcéljaidat.
                         </p>
@@ -208,72 +201,72 @@
             </section>
 
             <!-- Rólam Szekció -->
-            <section id="about" class="py-20 border-t border-white/10 scroll-mt-24">
-                <div class="flex items-center gap-4 mb-12">
+            <section id="about" class="py-14 sm:py-20 border-t border-white/10 scroll-mt-20 sm:scroll-mt-24">
+                <div class="flex items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
                     <div class="w-1.5 h-6 bg-red-500/80 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.6)]"></div>
-                    <h2 id="secAboutTitle" class="text-2xl font-bold text-zinc-100">Rólam</h2>
+                    <h2 id="secAboutTitle" class="text-xl sm:text-2xl font-bold text-zinc-100">Rólam</h2>
                 </div>
                 
-                <div class="ios-glass rounded-3xl p-8 md:p-12">
-                    <p id="aboutText" class="text-zinc-300 leading-relaxed text-base md:text-lg mb-10">
+                <div class="ios-glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12">
+                    <p id="aboutText" class="text-zinc-300 leading-relaxed text-sm sm:text-base md:text-lg mb-8 sm:mb-10">
                         Tanulmányaimat a Debreceni Egyetem Kereskedelem és Marketing szakán folytatom. Szakmai tapasztalatomat a repülőgépiparban logisztikai gyakornokként, valamint egy független vállalatnál digitális hirdetéskezelőként építem. Kiemelt érdeklődéssel fordulok a folyamatoptimalizálás és az adatalapú döntéshozatal felé. Szabadidőmben a motorsportok és a komolyabb szintkülönbségeket tartogató hegyi túrák jelentik a kikapcsolódást, emellett előszeretettel tervezek és fejlesztek olyan letisztult webes alkalmazásokat, amelyek a gyakorlatban is valódi értéket teremtenek a felhasználók számára.
                     </p>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="p-5 rounded-2xl ios-static-badge text-center flex flex-col items-center">
-                            <i data-lucide="graduation-cap" class="w-5 h-5 text-red-400 mb-3"></i>
-                            <span id="stat1" class="text-[11px] font-bold text-zinc-300 uppercase tracking-widest">Kereskedelem</span>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl ios-static-badge text-center flex flex-col items-center">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mb-2 sm:mb-3"></i>
+                            <span id="stat1" class="text-[10px] sm:text-[11px] font-bold text-zinc-300 uppercase tracking-wider sm:tracking-widest">Kereskedelem</span>
                         </div>
-                        <div class="p-5 rounded-2xl ios-static-badge text-center flex flex-col items-center">
-                            <i data-lucide="plane" class="w-5 h-5 text-red-400 mb-3"></i>
-                            <span id="stat2" class="text-[11px] font-bold text-zinc-300 uppercase tracking-widest">Logisztika</span>
+                        <div class="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl ios-static-badge text-center flex flex-col items-center">
+                            <i data-lucide="plane" class="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mb-2 sm:mb-3"></i>
+                            <span id="stat2" class="text-[10px] sm:text-[11px] font-bold text-zinc-300 uppercase tracking-wider sm:tracking-widest">Logisztika</span>
                         </div>
-                        <div class="p-5 rounded-2xl ios-static-badge text-center flex flex-col items-center">
-                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-red-400 mb-3"></i>
-                            <span id="stat3" class="text-[11px] font-bold text-zinc-300 uppercase tracking-widest">Hirdetéskezelés</span>
+                        <div class="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl ios-static-badge text-center flex flex-col items-center">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mb-2 sm:mb-3"></i>
+                            <span id="stat3" class="text-[10px] sm:text-[11px] font-bold text-zinc-300 uppercase tracking-wider sm:tracking-widest">Hirdetéskezelés</span>
                         </div>
-                        <div class="p-5 rounded-2xl ios-static-badge text-center flex flex-col items-center">
-                            <i data-lucide="code" class="w-5 h-5 text-red-400 mb-3"></i>
-                            <span id="stat4" class="text-[11px] font-bold text-zinc-300 uppercase tracking-widest">Webfejlesztés</span>
+                        <div class="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl ios-static-badge text-center flex flex-col items-center">
+                            <i data-lucide="code" class="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mb-2 sm:mb-3"></i>
+                            <span id="stat4" class="text-[10px] sm:text-[11px] font-bold text-zinc-300 uppercase tracking-wider sm:tracking-widest">Webfejlesztés</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Kapcsolat Szekció -->
-            <section id="contact" class="py-20 border-t border-white/10 scroll-mt-24">
-                <div class="flex items-center gap-4 mb-12">
+            <section id="contact" class="py-14 sm:py-20 border-t border-white/10 scroll-mt-20 sm:scroll-mt-24">
+                <div class="flex items-center gap-3.5 sm:gap-4 mb-8 sm:mb-12">
                     <div class="w-1.5 h-6 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.7)]"></div>
-                    <h2 id="secContactTitle" class="text-2xl font-bold text-zinc-100">Kapcsolat</h2>
+                    <h2 id="secContactTitle" class="text-xl sm:text-2xl font-bold text-zinc-100">Kapcsolat</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <a href="mailto:006nagym@gmail.com" class="flex items-center gap-5 p-6 rounded-2xl ios-glass-card group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:text-red-400 group-hover:border-red-500/40 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.3)] transition-all text-zinc-400">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <a href="mailto:006nagym@gmail.com" class="flex items-center gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl ios-glass-card group min-w-0">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:text-red-400 group-hover:border-red-500/40 transition-all text-zinc-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                         </div>
-                        <div>
-                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-1">E-mail</span>
-                            <span class="text-zinc-100 font-medium group-hover:text-red-300 transition-colors">006nagym@gmail.com</span>
+                        <div class="min-w-0 truncate">
+                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-0.5 sm:mb-1">E-mail</span>
+                            <span class="text-sm sm:text-base text-zinc-100 font-medium group-hover:text-red-300 transition-colors truncate block">006nagym@gmail.com</span>
                         </div>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/martonnagy01" target="_blank" class="flex items-center gap-5 p-6 rounded-2xl ios-glass-card linkedin-card group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-[#0a66c2] group-hover:border-[#0a66c2]/40 transition-all">
+                    <a href="https://www.linkedin.com/in/martonnagy01" target="_blank" class="flex items-center gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl ios-glass-card linkedin-card group min-w-0">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-[#0a66c2] group-hover:border-[#0a66c2]/40 transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                         </div>
-                        <div>
-                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-1">LinkedIn</span>
-                            <span class="text-zinc-100 font-medium group-hover:text-[#38bdf8] transition-colors">Nagy Márton</span>
+                        <div class="min-w-0 truncate">
+                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-0.5 sm:mb-1">LinkedIn</span>
+                            <span class="text-sm sm:text-base text-zinc-100 font-medium group-hover:text-[#38bdf8] transition-colors truncate block">Nagy Márton</span>
                         </div>
                     </a>
 
-                    <a href="https://www.instagram.com/marci_06_/" target="_blank" class="flex items-center gap-5 p-6 rounded-2xl ios-glass-card instagram-card group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-[#e1306c] group-hover:border-[#e1306c]/40 transition-all">
+                    <a href="https://www.instagram.com/marci_06_/" target="_blank" class="flex items-center gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl ios-glass-card instagram-card group min-w-0">
+                        <div class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 group-hover:text-[#e1306c] group-hover:border-[#e1306c]/40 transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                         </div>
-                        <div>
-                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-1">Instagram</span>
-                            <span class="text-zinc-100 font-medium group-hover:text-[#f472b6] transition-colors">Nagy Márton</span>
+                        <div class="min-w-0 truncate">
+                            <span class="block text-xs uppercase tracking-wider text-zinc-500 font-bold mb-0.5 sm:mb-1">Instagram</span>
+                            <span class="text-sm sm:text-base text-zinc-100 font-medium group-hover:text-[#f472b6] transition-colors truncate block">Nagy Márton</span>
                         </div>
                     </a>
                 </div>
@@ -283,11 +276,11 @@
     </main>
 
     <!-- Lábléc -->
-    <footer class="py-8 text-center text-sm text-zinc-500 border-t border-white/10 bg-[#09090b]/60 backdrop-blur-xl">
+    <footer class="py-6 sm:py-8 text-center text-xs sm:text-sm text-zinc-500 border-t border-white/10 bg-[#09090b]/60 backdrop-blur-xl">
         <p id="footerText">© 2026 Nagy Márton. Minden jog fenntartva.</p>
     </footer>
 
-    <!-- App Logika, Nyelvi Szótár & Görgetésfigyelő -->
+    <!-- Script -->
     <script>
         lucide.createIcons();
 
@@ -371,18 +364,17 @@
             const langEnBtn = document.getElementById('langEn');
             
             if (lang === 'hu') {
-                langHuBtn.className = "px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all";
-                langEnBtn.className = "px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all";
+                langHuBtn.className = "px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all";
+                langEnBtn.className = "px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all";
             } else {
-                langEnBtn.className = "px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all";
-                langHuBtn.className = "px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all";
+                langEnBtn.className = "px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 shadow-sm transition-all";
+                langHuBtn.className = "px-2.5 sm:px-3 py-1 text-xs font-bold tracking-wide rounded-lg text-zinc-400 hover:text-zinc-200 transition-all";
             }
         }
 
         document.getElementById('langHu').addEventListener('click', () => setLanguage('hu'));
         document.getElementById('langEn').addEventListener('click', () => setLanguage('en'));
 
-        // Görgetésfigyelő: 280px-es megnövelt offsettel
         const sections = document.querySelectorAll('section[id]');
         const navLinks = {
             'projects': document.getElementById('navProjects'),
@@ -411,12 +403,14 @@
 
             Object.keys(navLinks).forEach(id => {
                 const link = navLinks[id];
-                if (id === current) {
-                    link.classList.add('text-red-500', 'font-semibold');
-                    link.classList.remove('text-zinc-400');
-                } else {
-                    link.classList.remove('text-red-500', 'font-semibold');
-                    link.classList.add('text-zinc-400');
+                if (link) {
+                    if (id === current) {
+                        link.classList.add('text-red-500', 'font-semibold');
+                        link.classList.remove('text-zinc-400');
+                    } else {
+                        link.classList.remove('text-red-500', 'font-semibold');
+                        link.classList.add('text-zinc-400');
+                    }
                 }
             });
         }
